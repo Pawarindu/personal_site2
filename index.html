@@ -1392,38 +1392,6 @@
     </footer>
 
     <script>
-        // 🔹 Local Time (visitor's device time)
-        function updateLocal() {
-            const now = new Date();
-            document.getElementById("local").textContent = now.toLocaleString();
-        }
-
-        // 🔹 Sri Lanka Time (fixed timezone)
-        function updateSL() {
-            const now = new Date();
-            const options = {
-                timeZone: "Asia/Colombo",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit"
-            };
-            document.getElementById("sl").textContent =
-                new Intl.DateTimeFormat("en-US", options).format(now);
-        }
-
-        // Auto update every 1s
-        setInterval(() => {
-            updateLocal();
-            updateSL();
-        }, 1000);
-
-        // Run immediately on load
-        updateLocal();
-        updateSL();
-        
         // ===== Auto-typing Title =====
         const textToType = "Rishitha.";
         const typedTextElement = document.getElementById('typedText');
@@ -1720,8 +1688,41 @@
         }, 10);
 
         window.addEventListener('scroll', debouncedScroll);
+
+        // 🔹 Local Time (visitor's device time)
+        function updateLocal() {
+            const now = new Date();
+            document.getElementById("local").textContent = now.toLocaleString();
+        }
+
+        // 🔹 Sri Lanka Time (fixed timezone)
+        function updateSL() {
+            const now = new Date();
+            const options = {
+                timeZone: "Asia/Colombo",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            };
+            document.getElementById("sl").textContent =
+                new Intl.DateTimeFormat("en-US", options).format(now);
+        }
+
+        // Auto update every 1s
+        setInterval(() => {
+            updateLocal();
+            updateSL();
+        }, 1000);
+
+        // Run immediately on load
+        updateLocal();
+        updateSL();
     </script>
 </body>
 
 
 </html>
+
