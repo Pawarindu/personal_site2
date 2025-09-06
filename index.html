@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishitha Pawarindu</title>
+    <meta name="description" content="Portfolio of Rishitha. - Content Creator, Problem Solver, Creative Thinke, Competitive Gamer, and Pixel Artist creating playful experiences and animated interfaces.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Boicons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <style>
+        /* ===== CSS Custom Properties ===== */
+        
+         :root {
+            --primary-green: #4ade80;
+            --primary-green-dark: #22c55e;
+            --primary-green-light: #dcfce7;
+            --bg-dark: #1f242d;
+            --bg-darker: #1a1e25;
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --white: #ffffff;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-glow: 0 0 20px rgba(74, 222, 128, 0.3);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --transition-base: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* ===== Reset & Base Styles ===== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            overflow-x: hidden;
+        }
+        /* ===== Typography ===== */
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--white);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+        }
+        
+        h2 {
+            font-size: clamp(1.875rem, 4vw, 2.5rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+        
+        a {
+            color: var(--primary-green);
+            text-decoration: none;
+            transition: color var(--transition-base);
+        }
+        
+        a:hover {
+            color: var(--primary-green-light);
+        }
+        /* ===== Navigation ===== */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(31, 36, 45, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(74, 222, 128, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all var(--transition-base);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-base);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width var(--transition-base);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        /* Mobile Menu */
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-darker);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left var(--transition-base);
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .nav-link {
+                font-size: 1.25rem;
+            }
+        }
+        /* ===== Snow Animation ===== */
+        
+        .snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .snowflake {
+            position: absolute;
+            color: var(--primary-green);
+            font-size: 1rem;
+            animation: snowfall linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* ===== Layout Components ===== */
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 4rem 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @media (min-width: 768px) {
+            section {
+                padding: 6rem 0;
+            }
+        }
+        /* ===== Buttons ===== */
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            min-height: 44px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--bg-dark);
+            box-shadow: var(--shadow-md), var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-green-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(74, 222, 128, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-green);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md), var(--shadow-glow);
+        }
+        /* ===== Hero Section ===== */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr auto;
+            }
+        }
+        
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+        /* Auto-typing title */
+        
+        .hero-title {
+            margin-bottom: 1rem;
+            position: relative;
+            height: 1.2em;
+        }
+        
+        .typed-text {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background: var(--primary-green);
+            animation: blink 1s infinite;
+            margin-left: 2px;
+        }
+        
+        @keyframes blink {
+            0%,
+            50% {
+                opacity: 1;
+            }
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        /* Auto-typing skills */
+        
+        .rotating-skills {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .skill-typer {
+            color: var(--primary-green);
+            font-weight: 600;
+            min-width: 200px;
+            display: inline-block;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        /* ===== Profile Card ===== */
+        
+        .profile-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+            max-width: 320px;
+            margin: 0 auto;
+            animation: fadeInRight 1s ease-out 0.9s both;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .profile-image-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+            animation: bob 4s ease-in-out infinite;
+            border: 4px solid var(--primary-green);
+            box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
+        }
+        
+        @keyframes bob {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        .profile-name {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-location {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-status {
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(74, 222, 128, 0.1);
+            color: var(--primary-green);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0 auto;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        /* ===== Social Icons ===== */
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            transition: all var(--transition-base);
+        }
+        
+        .social-link:hover {
+            background: var(--primary-green);
+            color: var(--bg-dark);
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+        }
+        
+        .social-link:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+        /* ===== CTA Buttons ===== */
+        
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+            align-items: center;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        /* ===== About Section ===== */
+        
+        .about {
+            background: var(--bg-darker);
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, rgba(74, 222, 128, 0.03) 50%, transparent 51%);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+        /* ===== Skills Section ===== */
+        
+        .skills {
+            background: var(--bg-dark);
+            position: relative;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(74, 222, 128, 0.2);
+            border-color: var(--primary-green);
+        }
+        
+        .skill-card:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+        
+        .skill-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            transition: all var(--transition-base);
+        }
+        
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+        }
+        
+        .skill-name {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-description {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        /* ===== Gallery Section ===== */
+        
+        .gallery {
+            background: var(--bg-darker);
+            position: relative;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-slow);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+        
+        .gallery-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(74, 222, 128, 0.2);
+            border-color: var(--primary-green);
+        }
+        
+        .gallery-item:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+            color: var(--white);
+            padding: 1.5rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform var(--transition-base);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        /* ===== Contact Section ===== */
+        
+        .contact {
+            background: var(--bg-dark);
+            position: relative;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+            text-decoration: none;
+            color: var(--text-light);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+        
+        .contact-method:hover {
+            background: rgba(74, 222, 128, 0.1);
+            transform: translateX(8px);
+            border-color: var(--primary-green);
+            box-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-green);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+        }
+        /* ===== Form Elements ===== */
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid rgba(74, 222, 128, 0.2);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all var(--transition-base);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+        }
+        
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1), 0 0 20px rgba(74, 222, 128, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: #ef4444;
+        }
+        
+        .form-group.error .error-message {
+            display: block;
+        }
+        /* ===== Footer ===== */
+        
+        footer {
+            background: var(--bg-darker);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(74, 222, 128, 0.1);
+        }
+        /* ===== Reveal Animations ===== */
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* ===== Utility Classes ===== */
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+        
+        .mt-8 {
+            margin-top: 2rem;
+        }
+        
+        .snowflake {
+            color: #fff;
+            font-size: 1em;
+            font-family: Arial;
+            text-shadow: 0 0 1px #000;
+        }
+        
+        @-webkit-keyframes snowflakes-fall {
+            0% {
+                top: -10%
+            }
+            100% {
+                top: 100%
+            }
+        }
+        
+        @-webkit-keyframes snowflakes-shake {
+            0% {
+                -webkit-transform: translateX(0px);
+                transform: translateX(0px)
+            }
+            50% {
+                -webkit-transform: translateX(80px);
+                transform: translateX(80px)
+            }
+            100% {
+                -webkit-transform: translateX(0px);
+                transform: translateX(0px)
+            }
+        }
+        
+        @keyframes snowflakes-fall {
+            0% {
+                top: -10%
+            }
+            100% {
+                top: 100%
+            }
+        }
+        
+        @keyframes snowflakes-shake {
+            0% {
+                transform: translateX(0px)
+            }
+            50% {
+                transform: translateX(80px)
+            }
+            100% {
+                transform: translateX(0px)
+            }
+        }
+        
+        .snowflake {
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+            -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+            -webkit-animation-duration: 10s, 3s;
+            -webkit-animation-timing-function: linear, ease-in-out;
+            -webkit-animation-iteration-count: infinite, infinite;
+            -webkit-animation-play-state: running, running;
+            animation-name: snowflakes-fall, snowflakes-shake;
+            animation-duration: 10s, 3s;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running
+        }
+        
+        .snowflake:nth-of-type(0) {
+            left: 1%;
+            -webkit-animation-delay: 0s, 0s;
+            animation-delay: 0s, 0s
+        }
+        
+        .snowflake:nth-of-type(1) {
+            left: 10%;
+            -webkit-animation-delay: 1s, 1s;
+            animation-delay: 1s, 1s
+        }
+        
+        .snowflake:nth-of-type(2) {
+            left: 20%;
+            -webkit-animation-delay: 6s, .5s;
+            animation-delay: 6s, .5s
+        }
+        
+        .snowflake:nth-of-type(3) {
+            left: 30%;
+            -webkit-animation-delay: 4s, 2s;
+            animation-delay: 4s, 2s
+        }
+        
+        .snowflake:nth-of-type(4) {
+            left: 40%;
+            -webkit-animation-delay: 2s, 2s;
+            animation-delay: 2s, 2s
+        }
+        
+        .snowflake:nth-of-type(5) {
+            left: 50%;
+            -webkit-animation-delay: 8s, 3s;
+            animation-delay: 8s, 3s
+        }
+        
+        .snowflake:nth-of-type(6) {
+            left: 60%;
+            -webkit-animation-delay: 6s, 2s;
+            animation-delay: 6s, 2s
+        }
+        
+        .snowflake:nth-of-type(7) {
+            left: 70%;
+            -webkit-animation-delay: 2.5s, 1s;
+            animation-delay: 2.5s, 1s
+        }
+        
+        .snowflake:nth-of-type(8) {
+            left: 80%;
+            -webkit-animation-delay: 1s, 0s;
+            animation-delay: 1s, 0s
+        }
+        
+        .snowflake:nth-of-type(9) {
+            left: 90%;
+            -webkit-animation-delay: 3s, 1.5s;
+            animation-delay: 3s, 1.5s
+        }
+        /* Demo Purpose Only*/
+        
+        .demo {
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            display: block;
+            margin: 0 auto;
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+        .demo a {
+            font-family: 'Raleway', sans-serif;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="sr-only">Skip to main content</a>
+
+    <div class="snowflakes" aria-hidden="true">
+        <div class="intro"> Find 250+ Ready to use demo at <a href="https://codeconvey.com">Codeconvey.com</a></div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+        <div class="snowflake">
+            ❅
+        </div>
+        <div class="snowflake">
+            ❆
+        </div>
+        <div class="snowflake">
+            ❄
+        </div>
+    </div>
+
+    <!-- Snow Animation -->
+    <div class="snow-container" id="snowContainer"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Rishitha.</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="typed-text" id="typedText"></span>
+                        <span class="cursor" id="cursor"></span>
+                    </h1>
+
+                    <div class="rotating-skills">
+                        <span>Hi, I'm</span>
+                        <span class="skill-typer" id="skillTyper"></span>
+                        <span class="cursor" id="skillCursor"></span>
+                        <!-- Screen reader fallback -->
+                        <span class="sr-only">Rishitha. - Content Creator, Problem Solver, Creative Thinke, Competitive Gamer</span>
+                    </div>
+
+                    <p class="hero-subtitle">Welcome to my personal website! Here you can find information about my skills, projects, and how to contact me.</p>
+
+                    <div class="hero-ctas">
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                        <a href="#gallery" class="btn btn-secondary">View My Images</a>
+
+                        <!--<div class="social-links">
+                            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                                <i class='bx bxl-twitter'></i>
+                            </a>
+                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                                <i class='bx bxl-github'></i>
+                            </a>
+                            <a href="https://youtube.com/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                                <i class='bx bxl-youtube'></i>
+                            </a>
+                            <a href="https://discord.gg/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">
+                                <i class='bx bxl-discord'></i>
+                            </a>
+                            <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
+                                <i class='bx bxl-telegram'></i>
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-image-wrapper">
+                        <img src="img/10.jpg" alt="Rishitha profile picture" class="profile-image">
+                    </div>
+                    <h3 class="profile-name">Rishitha</h3>
+                    <p class="profile-location">Based in Sri Lanka</p>
+                    <div class="profile-status">
+                        <span class="status-dot"></span> Available for freelance
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://wa.me/94776822577" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Whatsapp">
+                            <i class='bx bxl-whatsapp'></i>
+                        </a>
+                        <a href="https://instagram.com/rishithapawarindu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://youtube.com/@mrrishboy1" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                            <i class='bx bxl-youtube'></i>
+                        </a>
+                        <a href="https://discord.gg/GQvxBxtXWg" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">
+                            <i class='bx bxl-discord'></i>
+                        </a>
+                        <a href="https://t.me/MrRishitha" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">
+                            <i class='bx bxl-telegram'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-content reveal">
+                    <h2 class="mb-4">About Me</h2>
+                    <p class="about-text">
+                        I’m Rishitha – a curious creator who loves turning wild ideas into pixels, videos & code. Competitive gaming taught me strategy, design taught me beauty, and content creation taught me storytelling. My goal is simple: build things that make people smile.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2 class="text-center mb-8">My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card reveal" tabindex="0">
+                        <div class="skill-icon">JS</div>
+                        <h3 class="skill-name">JavaScript</h3>
+                        <p class="skill-description">Modern ES6+ development with interactive features</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <div class="skill-icon">UI</div>
+                        <h3 class="skill-name">UI Design</h3>
+                        <p class="skill-description">Creating beautiful and intuitive user interfaces</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <div class="skill-icon">U</div>
+                        <h3 class="skill-name">Unity</h3>
+                        <p class="skill-description">Game development with Unity engine</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <div class="skill-icon">HC</div>
+                        <h3 class="skill-name">HTML & CSS</h3>
+                        <p class="skill-description">Semantic markup and modern CSS techniques</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <div class="skill-icon">PA</div>
+                        <h3 class="skill-name">Pixel Art</h3>
+                        <p class="skill-description">Creating retro-style pixel artwork</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <div class="skill-icon">P</div>
+                        <h3 class="skill-name">Phaser</h3>
+                        <p class="skill-description">HTML5 game framework for web games</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <img src="img/fivem.png" alt="" class="profile-image">
+                        <h3 class="skill-name">FiveM</h3>
+                        <p class="skill-description">FiveM Developer</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <img src="img/ets2.png" alt="" class="profile-image">
+                        <h3 class="skill-name">ETS 2</h3>
+                        <p class="skill-description">ETS 2 Player</p>
+                    </div>
+                    <div class="skill-card reveal" tabindex="0">
+                        <img src="img/valorant.png" alt="" class="profile-image">
+                        <h3 class="skill-name">Valorant</h3>
+                        <p class="skill-description">Valorant Player</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2 class="text-center mb-2">My Images</h2>
+                <p class="text-center mb-8">Ai Generated Images..!</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/4ade80/1f242d?text=Game+Scene+Pixel+Sunset')">
+                        <img src="img/01.jpg" alt="Game Scene - Pixel sunset" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/22c55e/1f242d?text=Character+Sprite+Idle')">
+                        <img src="img/05.jpg" alt="Character Sprite - Idle" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/ef4444/1f242d?text=UI+Mock+Main+Menu')">
+                        <img src="img/03.jpg" alt="UI Mock - Main menu" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/3b82f6/1f242d?text=Level+Art+Forest')">
+                        <img src="img/04.jpg" alt="Level Art - Forest" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/8b5cf6/1f242d?text=Promo+Art+Poster')">
+                        <img src="img/02.jpg" alt="Promo Art - Poster" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/06b6d4/1f242d?text=Concept+Sci-fi+City')">
+                        <img src="img/06.jpg" alt="Concept - Sci-fi city" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/f97316/1f242d?text=Sprite+Sheet+Walk')">
+                        <img src="img/07.jpg" alt="Sprite Sheet - Walk" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/84cc16/1f242d?text=Artboard+HUD')">
+                        <img src="img/08.jpg" alt="Artboard - HUD" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/84cc16/1f242d?text=Artboard+HUD')">
+                        <img src="img/09.jpg" alt="Artboard - HUD" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/84cc16/1f242d?text=Artboard+HUD')">
+                        <img src="img/10.jpg" alt="Artboard - HUD" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/84cc16/1f242d?text=Artboard+HUD')">
+                        <img src="img/11.jpg" alt="Artboard - HUD" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                    <div class="gallery-item" tabindex="0" onclick="openImage('https://via.placeholder.com/800x600/84cc16/1f242d?text=Artboard+HUD')">
+                        <img src="img/12.jpg" alt="Artboard - HUD" class="gallery-image">
+                        <div class="gallery-caption">Ai Image</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="text-center mb-8">Contact Me</h2>
+                <p class="text-center mb-8">Want to work together? Send a message or use the links below.</p>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <a href="mailto:pawarindur@gmail.com" class="contact-method">
+                            <div class="contact-icon">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>pawarindur@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://discord.gg/GQvxBxtXWg" target="_blank" rel="noopener noreferrer" class="contact-method">
+                            <div class="contact-icon">
+                                <i class='bx bxl-discord'></i>
+                            </div>
+                            <div>
+                                <h3>Discord</h3>
+                                <p>Join my Discord server</p>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/94776822577" target="_blank" rel="noopener noreferrer" class="contact-method">
+                            <div class="contact-icon">
+                                <i class='bx bxl-whatsapp'></i>
+                            </div>
+                            <div>
+                                <h3>Whatsapp</h3>
+                                <p>Message me on Whatsapp</p>
+                            </div>
+                        </a>
+
+                        <div class="social-links mt-8">
+                            <a href="https://instagram.com/rishithapawarindu" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                                <i class='bx bxl-instagram'></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100093269404047" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                                <i class='bx bxl-facebook'></i>
+                            </a>
+                            <a href="https://youtube.com/@mrrishboy1" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                                <i class='bx bxl-youtube'></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message">Please enter your name</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message">Please enter a valid email address</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <span class="error-message">Please enter your message</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class='bx bx-send'></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rishitha. All rights reserved. | Built with ❤️ and pixels</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Auto-typing Title =====
+        const textToType = "Rishitha.";
+        const typedTextElement = document.getElementById('typedText');
+        const cursorElement = document.getElementById('cursor');
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < textToType.length) {
+                typedTextElement.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 150);
+            } else {
+                // Start skill typing after name is complete
+                setTimeout(() => {
+                    typeSkills();
+                }, 500);
+            }
+        }
+
+        // Start typing animation
+        setTimeout(typeText, 500);
+
+        // ===== Auto-typing Skills =====
+        const skills = ['Content Creator', 'Problem Solver', 'Creative Thinker', 'Competitive Gamer'];
+        const skillTyper = document.getElementById('skillTyper');
+        const skillCursor = document.getElementById('skillCursor');
+        let skillIndex = 0;
+        let charSkillIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150;
+
+        function typeSkills() {
+            const currentSkill = skills[skillIndex];
+
+            if (isDeleting) {
+                skillTyper.textContent = currentSkill.substring(0, charSkillIndex - 1);
+                charSkillIndex--;
+                typingSpeed = 100;
+            } else {
+                skillTyper.textContent = currentSkill.substring(0, charSkillIndex + 1);
+                charSkillIndex++;
+                typingSpeed = 150;
+            }
+
+            if (!isDeleting && charSkillIndex === currentSkill.length) {
+                typingSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charSkillIndex === 0) {
+                isDeleting = false;
+                skillIndex = (skillIndex + 1) % skills.length;
+                typingSpeed = 500;
+            }
+
+            setTimeout(typeSkills, typingSpeed);
+        }
+
+        // ===== Snow Animation =====
+        function createSnowflake() {
+            const snowContainer = document.getElementById('snowContainer');
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+            snowContainer.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        // Create snowflakes periodically
+        setInterval(createSnowflake, 300);
+
+        // ===== Mobile Menu Toggle =====
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.toggle('bx-menu');
+            icon.classList.toggle('bx-x');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.add('bx-menu');
+                icon.classList.remove('bx-x');
+            });
+        });
+
+        // ===== Smooth Scroll Behavior =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ===== Navbar Background on Scroll =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(31, 36, 45, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(31, 36, 45, 0.95)';
+            }
+        });
+
+        // ===== Reveal on Scroll Animation =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observe gallery items with stagger
+        const galleryObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.gallery-item').forEach(el => {
+            galleryObserver.observe(el);
+        });
+
+        // ===== Gallery Image Opening =====
+        function openImage(src) {
+            window.open(src, '_blank');
+        }
+
+        // ===== Contact Form Validation =====
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Reset previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+
+            let isValid = true;
+
+            // Validate name
+            const name = document.getElementById('name');
+            if (!name.value.trim()) {
+                name.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailRegex.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            // Validate message
+            const message = document.getElementById('message');
+            if (!message.value.trim()) {
+                message.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // In a real implementation, you would send this data to a backend
+                // For now, we'll create a mailto link
+                const subject = encodeURIComponent('Portfolio Contact Form');
+                const body = encodeURIComponent(`Name: ${name.value}\nEmail: ${email.value}\n\nMessage:\n${message.value}`);
+
+                window.location.href = `mailto:pawarindur@gmail.com?subject=${subject}&body=${body}`;
+
+                // Show success message
+                alert('Thank you for your message! I\'ll get back to you soon.');
+
+                // Reset form
+                contactForm.reset();
+            }
+        });
+
+        // Real-time validation
+        document.querySelectorAll('input, textarea').forEach(field => {
+            field.addEventListener('blur', function() {
+                const formGroup = this.closest('.form-group');
+
+                if (this.hasAttribute('required')) {
+                    if (!this.value.trim()) {
+                        formGroup.classList.add('error');
+                    } else {
+                        formGroup.classList.remove('error');
+                    }
+                }
+
+                if (this.type === 'email' && this.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(this.value)) {
+                        formGroup.classList.add('error');
+                    } else {
+                        formGroup.classList.remove('error');
+                    }
+                }
+            });
+        });
+
+        // ===== Parallax Effect for Hero =====
+        let ticking = false;
+
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const heroText = document.querySelector('.hero-text');
+            const profileCard = document.querySelector('.profile-card');
+
+            if (heroText) {
+                heroText.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+
+            if (profileCard) {
+                profileCard.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // ===== Keyboard Navigation =====
+        document.addEventListener('keydown', function(e) {
+            // Escape key to close any open modals or reset focus
+            if (e.key === 'Escape') {
+                document.activeElement.blur();
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.add('bx-menu');
+                icon.classList.remove('bx-x');
+            }
+        });
+
+        // ===== Performance Optimization =====
+        // Debounce scroll events for better performance
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply debouncing to scroll events
+        const debouncedScroll = debounce(() => {
+            // Additional scroll-based animations can be added here
+        }, 10);
+
+        window.addEventListener('scroll', debouncedScroll);
+    </script>
+</body>
+
+</html>
