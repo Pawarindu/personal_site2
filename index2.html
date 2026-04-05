@@ -11,6 +11,27 @@ body {
     background: black;
     overflow-x: hidden;
 }
+.top-center {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .back-button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ff00d0;
+        }
 h1 {
 	color: #ff00c8;
 	text-align: center;
@@ -23,10 +44,19 @@ canvas {
 
 <body>
 </br>
+</br>
+</br>
+</br>
 <h1>Hey Baby</h1>
+<div class="top-center">
+        <button class="back-button" onclick="goBack()">Home</button>
+    </div>
 <canvas id="canvas"></canvas>
 
 <script>
+        function goBack() {
+            window.location.href = "index.html"; 
+        }
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -430,6 +460,7 @@ window.addEventListener("resize", () => {
     resizeCanvas();
     init();
 });
+
 </script>
 
 </body>
